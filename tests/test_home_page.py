@@ -1,6 +1,6 @@
 import unittest
-from base_test_fixture import BaseTestFixture
-from google_home_page import GoogleHomePage
+from fixtures.base_test_fixture import BaseTestFixture
+from pages.google_home_page import GoogleHomePage
 
 
 class TestGoogleSearch(BaseTestFixture):
@@ -16,8 +16,8 @@ class TestGoogleSearch(BaseTestFixture):
         self.driver.get("https://www.google.com")
 
     def test_should_search_google(self):
+        assert "Google" in self.driver.title
         self.google_home_page.search("Python Tutorial")
-        assert "Python Tutorial" in self.driver.title
 
 
 if __name__ == '__main__':

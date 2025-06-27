@@ -1,4 +1,4 @@
-from base_page_object import BasePage
+from pages.base_page_object import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
@@ -29,5 +29,5 @@ class GoogleHomePage(BasePage):
             EC.title_contains(keyword))
 
     class Selectors(object):
-        SEARCH_INPUT = (By.XPATH, "//input[@title='Search']")
-        SEARCH_BUTTON = (By.XPATH, "//input[@value='Google Search']")
+        SEARCH_INPUT = (By.NAME, "q")
+        SEARCH_BUTTON = (By.NAME, "btnK")
